@@ -94,6 +94,31 @@ LOCK TABLES `menu` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `menu items`
+--
+
+DROP TABLE IF EXISTS `menu items`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `menu items` (
+  `Menu_Item_id` int NOT NULL,
+  `Course_name` varchar(45) NOT NULL,
+  `Starter_name` varchar(45) NOT NULL,
+  `Dessert_name` varchar(45) NOT NULL,
+  PRIMARY KEY (`Menu_Item_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `menu items`
+--
+
+LOCK TABLES `menu items` WRITE;
+/*!40000 ALTER TABLE `menu items` DISABLE KEYS */;
+/*!40000 ALTER TABLE `menu items` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `order delivery status`
 --
 
@@ -183,4 +208,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-03-15 14:51:19
+-- Dump completed on 2024-03-15 15:35:58
