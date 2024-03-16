@@ -1,4 +1,4 @@
-![interactive dashboard little lemon](https://github.com/kshitij-hash/db-capstone-project/assets/83551355/69ff6c4d-ee0d-45f4-85bd-927ba15d24ce)![Screenshot 2024-03-16 183555](https://github.com/kshitij-hash/db-capstone-project/assets/83551355/0919a1ea-0b40-4260-bfa4-26b9cf71a31b)﻿# Database Engineer Capstone Project
+# Database Engineer Capstone Project
 This repository contains all the necessary files for the Database Engineer Capstone Project.
 
 ## Scenario
