@@ -55,6 +55,7 @@ CREATE TABLE `customers` (
   `Customer_id` int NOT NULL,
   `Customer_name` varchar(255) NOT NULL,
   `Contact_no` int NOT NULL,
+  `Email` varchar(45) NOT NULL,
   PRIMARY KEY (`Customer_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -76,11 +77,13 @@ DROP TABLE IF EXISTS `menu`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `menu` (
-  `Item_id` int NOT NULL,
-  `Item_name` varchar(255) NOT NULL,
-  `Item_type` varchar(255) NOT NULL,
-  `Price` decimal(10,2) NOT NULL,
-  PRIMARY KEY (`Item_id`)
+  `Menu_id` int NOT NULL,
+  `Name` varchar(255) NOT NULL,
+  `Cuisine` varchar(255) NOT NULL,
+  `Menu_item_id` int NOT NULL,
+  PRIMARY KEY (`Menu_id`),
+  KEY `menu_item_id_fk_idx` (`Menu_item_id`),
+  CONSTRAINT `menu_item_id_fk` FOREIGN KEY (`Menu_item_id`) REFERENCES `menu items` (`Menu_Item_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -157,10 +160,13 @@ CREATE TABLE `orders` (
   `Total_cost` decimal(10,2) NOT NULL,
   `Booking_id` int NOT NULL,
   `Staff_id` int NOT NULL,
+  `Menu_id` int NOT NULL,
   PRIMARY KEY (`Order_id`),
   KEY `booking_id_fk_idx` (`Booking_id`),
   KEY `staff_id_fk_idx` (`Staff_id`),
+  KEY `item_id_fk_idx` (`Menu_id`),
   CONSTRAINT `booking_id_fk` FOREIGN KEY (`Booking_id`) REFERENCES `bookings` (`Booking_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `menu_id_fk` FOREIGN KEY (`Menu_id`) REFERENCES `menu` (`Menu_id`),
   CONSTRAINT `staff_id_fk` FOREIGN KEY (`Staff_id`) REFERENCES `staff` (`Staff_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -208,4 +214,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-03-15 15:35:58
+-- Dump completed on 2024-03-16 12:31:48
