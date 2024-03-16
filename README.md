@@ -14,7 +14,7 @@ Little Lemon needs to build a robust relational database system in MySQL in whic
 ## ER Diagram
 ![littlelemondm](https://github.com/kshitij-hash/db-capstone-project/assets/83551355/031b45de-d44f-499c-8fe9-10e30d5b57f8)
 
-## Procedures
+## Stored Procedures
 1. `GetMaxQuantity` displays the maximum ordered quantity in the Orders table
 2. `CancelOrder` delete an order record based on the user input of the order id
 3. `CheckBooking` check whether a table in the restaurant is already booked
